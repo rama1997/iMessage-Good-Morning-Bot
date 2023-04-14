@@ -1,0 +1,3 @@
+USER_NAME = "Example"
+USER_NUMBER = "12345678"
+CITY = "New York"
