@@ -1,22 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
-import datetime
 from send_message import send_message
-
-
-def get_today_month_and_date() -> tuple[str, str]:
-    """
-    Return today's month and date
-    """
-
-    # Get the current date
-    now = datetime.datetime.now()
-
-    # Extract the month and date from the current date
-    month = now.strftime("%B")  # Full month name
-    date = now.strftime("%d")  # Day of the month with leading zero
-
-    return month, date
+from config import MONTH, DATE, HOLIDAY_MESSAGE
 
 
 def get_daily_holiday() -> str:
@@ -24,11 +9,8 @@ def get_daily_holiday() -> str:
     Given a month and a day, web scrapes 'https://nationaltoday.com' to get most popular holiday of the day
     """
 
-    # Get today's month and date
-    month, date = get_today_month_and_date()
-
     # URL of the page we want to scrape
-    url = f"https://nationaltoday.com/{month.lower()}-{date}-holidays/"
+    url = f"https://nationaltoday.com/{MONTH.lower()}-{DATE}-holidays/"
 
     # Send a GET request to the URL and store the response
     html_text = requests.get(url)
@@ -85,5 +67,7 @@ def get_daily_holiday_backup_website() -> str:
 
 def send_daily_holiday_alert(recipient_number):
     holiday = get_daily_holiday()
-    message = f"HAPPY {holiday.upper()}!! 🎉🎉".replace("'", "")
-    send_message(recipient_number=recipient_number, message=message)
+    send_message(
+        recipient_number=recipient_number,
+        message=HOLIDAY_MESSAGE.format(HOLIDAY=holiday.upper()).replace("'", ""),
+    )

@@ -56,6 +56,7 @@ def send_rain_alert(recipient_number, city):
 
     # Create and send message if it will rain
     if will_rain(city):
-        # Get quote for rain message
-        message = RAIN_ALERT_MESSAGE.replace("'", "")
-        send_message(recipient_number=recipient_number, message=message)
+        send_message(
+            recipient_number=recipient_number,
+            message=RAIN_ALERT_MESSAGE.replace("'", ""),
+        )

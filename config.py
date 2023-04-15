@@ -1,4 +1,5 @@
 import random
+from date import get_month, get_date, get_day
 
 PATH_TO_APPLESCRIPT = "Enter path to send_message.applescript"
 
@@ -9,7 +10,6 @@ REDDIT_API_SECRET = "Enter Reddit API Secret"
 REDDIT_USER = "Enter Reddit account username"
 REDDIT_PASS = "Enter Reddit account password"
 
-# List of subreddits to search for dog pic
 SUBREDDITS = [
     "corgi",
     "dogpictures",
@@ -22,6 +22,23 @@ SUBREDDITS = [
 
 RAIN_ALERT_MESSAGE = "Enter rain alert message"
 
-MORNING_MESSAGE = "Enter morning message "
+MONTH = get_month()
+DAY = get_day()
+DATE = get_date()
 
-CLOSING_MESSAGE = "Enter closing message"
+with open("quotes.txt", "r") as file:
+    quotes = file.readlines()
+
+MOTIVATION_QUOTE = random.choice(quotes)
+
+RAIN_ALERT_MESSAGE = "It is projected to rain today. Stay dry and bring an umbrella. Drive slow and drive safe."
+
+HOLIDAY_MESSAGE = "HAPPY {HOLIDAY}!! 🎉"
+
+DOG_PIC_MESSAGE = (
+    "Here's a daily dog picture to start your day off 🤗 \n\nPost Title: {TITLE} \n{URL}"
+)
+
+MORNING_GREETING = "Good Morning {NAME} ☀️☀️. Today is {DAY}, {MONTH} {DATE}."
+
+CLOSING_MESSAGE = f"{MOTIVATION_QUOTE} \n Have a good rest of your day. "

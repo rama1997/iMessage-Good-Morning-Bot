@@ -10,6 +10,7 @@ from config import (
     REDDIT_API_ID,
     REDDIT_API_SECRET,
     SUBREDDITS,
+    DOG_PIC_MESSAGE,
 )
 
 
@@ -123,7 +124,8 @@ def send_dog_pic(recipient_number):
             url = post["data"]["url"]
             break
 
-    message = f"Here's a daily dog picture to start your day off 🤗 \n\nPost Title: {title} \n{url}".replace(
-        "'", ""
-    )
-    send_message(recipient_number=recipient_number, message=message)
+    if title and url:
+        send_message(
+            recipient_number=recipient_number,
+            message=DOG_PIC_MESSAGE.format(TITLE=title, URL=url).replace("'", ""),
+        )
