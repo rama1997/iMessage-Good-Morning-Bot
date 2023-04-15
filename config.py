@@ -20,8 +20,6 @@ SUBREDDITS = [
     "rarepuppers",
 ]
 
-RAIN_ALERT_MESSAGE = "Enter rain alert message"
-
 MONTH = get_month()
 DAY = get_day()
 DATE = get_date()
