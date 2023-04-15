@@ -20,8 +20,6 @@ SUBREDDITS = [
     "rarepuppers",
 ]
 
-RAIN_ALERT_MESSAGE = "Enter rain alert message"
-
 MONTH = get_month()
 DAY = get_day()
 DATE = get_date()
@@ -41,4 +39,6 @@ DOG_PIC_MESSAGE = (
 
 MORNING_GREETING = "Good Morning {NAME} ☀️☀️. Today is {DAY}, {MONTH} {DATE}."
 
-CLOSING_MESSAGE = f"{MOTIVATION_QUOTE} \n Have a good rest of your day. "
+CLOSING_MESSAGE = f"{MOTIVATION_QUOTE} \n Have a good rest of your day.".replace(
+    "'", ""
+)
