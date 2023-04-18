@@ -1,6 +1,10 @@
 # iMessage-Good-Morning-Bot
 Customizable good morning message that can be sent through iMessage every morning.
 
+Example message using default messages:
+
+<img src="https://i.imgur.com/EDDUyPo.png" width="405" height="486" />
+
 # Features
 - Customizable good morning greeting
 - Additional content included with each message:
