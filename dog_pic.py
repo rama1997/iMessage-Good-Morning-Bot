@@ -3,7 +3,7 @@ import requests.auth
 import random
 import glob
 import os
-from send_message import send_message
+from iMessage import send_message, send_picture
 from config import (
     REDDIT_USER,
     REDDIT_PASS,
@@ -76,7 +76,7 @@ def valid_content_format(post) -> bool:
     return True if is_valid else False
 
 
-def dl_image_content(image_url):
+def download_image_content(image_url):
     """Given an image url, download the content of the image
 
     Args:
@@ -88,6 +88,9 @@ def dl_image_content(image_url):
 
     # Check if the image was retrieved successfully
     if response.status_code == 200:
+        # Set decode_content value to True, otherwise the downloaded image file's size will be zero.
+        response.raw.decode_content = True
+
         # Get file extension of image
         extension = ".jpeg"
         for ext in ("mp4", "png", "gif", "jpeg", "jpg"):
@@ -122,6 +125,7 @@ def send_dog_pic(recipient_number):
         if valid_content_format(post):
             title = post["data"]["title"]
             url = post["data"]["url"]
+            download_image_content(url)
             break
 
     if title and url:
@@ -129,3 +133,4 @@ def send_dog_pic(recipient_number):
             recipient_number=recipient_number,
             message=DOG_PIC_MESSAGE.format(TITLE=title, URL=url).replace("'", ""),
         )
+        # send_picture(recipient_number=recipient_number)

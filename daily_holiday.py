@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from send_message import send_message
+from iMessage import send_message
 from config import MONTH, DATE, HOLIDAY_MESSAGE
 
 

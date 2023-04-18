@@ -1,6 +1,6 @@
 import requests
 import datetime
-from send_message import send_message
+from iMessage import send_message
 from config import OPENWEATHERMAP_API_KEY, RAIN_ALERT_MESSAGE
 
 

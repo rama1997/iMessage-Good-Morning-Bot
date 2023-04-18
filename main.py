@@ -1,6 +1,6 @@
 from rain_alert import send_rain_alert
 from dog_pic import send_dog_pic
-from send_message import send_message
+from iMessage import send_message
 from daily_holiday import send_daily_holiday_alert
 from config import MORNING_GREETING, CLOSING_MESSAGE, MONTH, DATE, DAY
 import argparse
