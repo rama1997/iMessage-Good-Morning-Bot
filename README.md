@@ -1,5 +1,9 @@
 # iMessage-Good-Morning-Bot
-Customizable good morning message that can be sent through iMessage every morning.
+Customizable good morning message sent through iMessage every morning.
+
+Example message using default messages:
+
+<img src="https://i.imgur.com/EDDUyPo.png" width="405" height="486" />
 
 # Features
 - Customizable good morning greeting
@@ -27,12 +31,11 @@ Customizable good morning message that can be sent through iMessage every mornin
 - Motivational quotes can be edited in `quotes.txt`
 
 # Usage 
-- Uses Applescript to send custom message from iMessage
-- Use crontab to schedule program to run every morning at desired time
 - Install dependencies: `pip install -r requirments.txt`
 - Args:
 	- `-n --name`: name of profile to use 
 - Run: `python main.py -n name`
+- Use crontab to schedule program to run every morning at desired time. 
 
 # Dog Picture
 - Uses Reddit API to search various dog related subreddits and randomly gets a recent popular dog picture from listed subreddits. 
