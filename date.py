@@ -23,7 +23,7 @@ def get_date() -> str:
     now = datetime.datetime.now()
 
     # Extract date from the current date
-    date = now.strftime("%d")
+    date = now.strftime("%-d")
     return date
 
 
