@@ -1,5 +1,5 @@
 # iMessage-Good-Morning-Bot
-Customizable good morning message sent through iMessage every morning.
+Bot that sends customizable good morning message through iMessage every morning.
 
 Example message using default messages:
 
