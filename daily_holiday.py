@@ -23,7 +23,10 @@ def get_daily_holiday() -> str:
 
     holidays = []
     for card in holiday_cards:
-        holiday_name = card.h3.text
+        if card.h3:
+            holiday_name = card.h3.text
+        else:
+            holiday_name = "None"
 
         # Get thrending share count text for each holiday and turns the count into an integer
         shares_count = card.find("div", class_="trending-share-count")
