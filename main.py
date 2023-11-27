@@ -2,6 +2,7 @@ from rain_alert import send_rain_alert
 from dog_pic import send_dog_pic
 from iMessage import send_message
 from daily_holiday import send_daily_holiday_alert
+from nba_schedule import send_nba_schedule
 from config import MORNING_GREETING, CLOSING_MESSAGE, MONTH, DATE, DAY
 import argparse
 
@@ -39,3 +40,4 @@ if __name__ == "__main__":
         send_dog_pic(recipient_number=profile.USER_NUMBER)
         send_rain_alert(recipient_number=profile.USER_NUMBER, city=profile.CITY)
         send_message(recipient_number=profile.USER_NUMBER, message=CLOSING_MESSAGE)
+        send_nba_schedule(recipient_number=profile.USER_NUMBER)

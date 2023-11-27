@@ -1,17 +1,15 @@
 # iMessage-Good-Morning-Bot
-Bot that sends customizable good morning message through iMessage every morning.
-
-Example message using default messages:
+Bot that sends customizable morning message through iMessage every morning.
 
 <img src="https://i.imgur.com/EDDUyPo.png" width="405" height="486" />
 
 # Features
 - Customizable good morning greeting
 - Additional content included with each message:
-	- Dog Picture - Gets a random dog pic from a selection of various dog subreddits
-	- Rain Alert - Gets daily forecast of desired city and sends a rain alert message if it is expected to rain 
-	- National Holiday Alert - Gets a national holiday on the current day and sends a custom message
-	- Motivation Quote - Sends a random motivation quote
+	- Dog Picture - Sends a new dog pic from a selection of various dog subreddits
+	- Rain Alert - Sends a rain alert message if it is expected to rain
+	- National Holiday Alert - Sends an alert for a popular national holiday of the current day
+	- Motivation Quote - Sends a random motivation quote from a predefined list of quotes
 
 # Requirements 
 - MacOS 
