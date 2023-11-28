@@ -1,6 +1,6 @@
 import requests
 import datetime
-from iMessage import send_message
+from iMessage import send_imessage_text
 from config import OPENWEATHERMAP_API_KEY, RAIN_ALERT_MESSAGE
 
 
@@ -38,7 +38,7 @@ def will_rain(city) -> bool:
 
 def send_rain_alert(recipient_number, city):
     if will_rain(city):
-        send_message(
+        send_imessage_text(
             recipient_number=recipient_number,
             message=RAIN_ALERT_MESSAGE.replace("'", ""),
         )

@@ -1,7 +1,7 @@
 from datetime import datetime, timezone
 from dateutil.parser import parse
 from nba_api.live.nba.endpoints import scoreboard
-from iMessage import send_message
+from iMessage import send_imessage_text
 
 
 def get_todays_game_schedule() -> list[str]:
@@ -37,7 +37,7 @@ def send_nba_schedule(recipient_number):
         for game in schedule:
             message += "\n" + game + "\n"
 
-        send_message(
+        send_imessage_text(
             recipient_number=recipient_number,
             message=message.replace("'", ""),
         )

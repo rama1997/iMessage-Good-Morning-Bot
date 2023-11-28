@@ -10,30 +10,48 @@ Bot that sends customizable morning message through iMessage every morning.
 	- Rain Alert - Sends a rain alert message if it is expected to rain
 	- National Holiday Alert - Sends an alert for a popular national holiday of the current day
 	- Motivation Quote - Sends a random motivation quote from a predefined list of quotes
+	- NBA Schedule - Sends a message containing the daily NBA game schedule
+- All messages are customizable
+- Option to disable any specific message/alert
 
-# Requirements 
+# Getting Started
+
+## Requirements 
 - MacOS 
 - Apple ID
 
-# Setup
-- Add required API key to `config.py` in order to use the additional content.
+## Setup
+Download repo from Github onto your computer
+```
+git clone https://github.com/rama1997/iMessage-Good-Morning-Bot.git
+cd iMessage-Good-Morning-Bot
+```
+
+Clone this repo and install packages listed in requirements.txt
+```
+pip install -r requirements.txt
+```
+You may want to install the requirements in a Python virtual environment to ensure they don't conflict with other Python projects on your system.
+
+- Add required API key to `config.py` in order to use the additional messages like the dog picture message.
 - Message customization can be done in `config.py`, where you can edit: 
-	- Good morning greeting 
-	- Rain alert message 
+	- Any of the messages provided
+	- Create your own message
 	- Subreddits to use as source for dog picture 
 	- Path to Applescript
-- Create your own profile python file in the `profiles` folder. Example profile provided in the folder. Each profile requires:
+- Create a new profile python file in the `profiles` folder. Example profile provided in the folder. Each profile requires:
 	- Name - User will be referred to as the provided name
 	- Phone number - custom messages will be sent to the provided phone number
 	- City - rain alert feature will search the forecast of the provided city
+	- Can disable any specific messages that you don't want to recieve, e.g., the rain alert
 - Motivational quotes can be edited in `quotes.txt`
+- Use crontab to schedule program to run every morning at your desired time. 
 
 # Usage 
-- Install dependencies: `pip install -r requirments.txt`
 - Args:
 	- `-n --name`: name of profile to use 
 - Run: `python main.py -n name`
-- Use crontab to schedule program to run every morning at desired time. 
+- If cron was set up correctly, bot will get called every morning at your desired time
 
 # Dog Picture
 - Uses Reddit API to search various dog related subreddits and randomly gets a recent popular dog picture from listed subreddits. 
@@ -58,3 +76,9 @@ Requires OpenWeather API Key.
 
 # National Holiday Alert
 Web scrapes https://nationaltoday.com to get the most popular daily "national" holiday and sends a customizable holiday alert message. Most of the holidays are going to end up being more fun holidays, for examples, National Unicorn Day.
+
+# NBA Schedule
+Sends a message containing the daily NBA game schedule retrieved using the NBA API
+
+# Todo
+- Add high traffic/long commute time alert

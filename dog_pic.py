@@ -3,7 +3,7 @@ import requests.auth
 import random
 import glob
 import os
-from iMessage import send_message, send_picture
+from iMessage import send_imessage_text, send_picture
 from config import (
     REDDIT_USER,
     REDDIT_PASS,
@@ -129,7 +129,7 @@ def send_dog_pic(recipient_number):
             break
 
     if title and url:
-        send_message(
+        send_imessage_text(
             recipient_number=recipient_number,
             message=DOG_PIC_MESSAGE.format(TITLE=title, URL=url).replace("'", ""),
         )

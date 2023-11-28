@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from iMessage import send_message
+from iMessage import send_imessage_text
 from config import MONTH, DATE, HOLIDAY_MESSAGE
 
 
@@ -70,7 +70,7 @@ def get_daily_holiday_backup_website() -> str:
 
 def send_daily_holiday_alert(recipient_number):
     holiday = get_daily_holiday()
-    send_message(
+    send_imessage_text(
         recipient_number=recipient_number,
         message=HOLIDAY_MESSAGE.format(HOLIDAY=holiday.upper()).replace("'", ""),
     )
