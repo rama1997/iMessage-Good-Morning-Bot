@@ -33,6 +33,7 @@ pip install -r requirements.txt
 ```
 You may want to install the requirements in a Python virtual environment to ensure they don't conflict with other Python projects on your system.
 
+## Configuration
 - Add required API key to `config.py` in order to use the additional messages like the dog picture message.
 - Message customization can be done in `config.py`, where you can edit: 
 	- Any of the messages provided
@@ -45,13 +46,12 @@ You may want to install the requirements in a Python virtual environment to ensu
 	- City - rain alert feature will search the forecast of the provided city
 	- Can disable any specific messages that you don't want to recieve, e.g., the rain alert
 - Motivational quotes can be edited in `quotes.txt`
-- Use crontab to schedule program to run every morning at your desired time. 
 
 # Usage 
 - Args:
 	- `-n --name`: name of profile to use 
 - Run: `python main.py -n name`
-- If cron was set up correctly, bot will get called every morning at your desired time
+- Use crontab to schedule program to run every morning at your desired time
 
 # Dog Picture
 - Uses Reddit API to search various dog related subreddits and randomly gets a recent popular dog picture from listed subreddits. 
