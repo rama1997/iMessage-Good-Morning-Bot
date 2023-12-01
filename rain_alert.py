@@ -40,5 +40,5 @@ def send_rain_alert(recipient_number, city):
     if will_rain(city):
         send_imessage_text(
             recipient_number=recipient_number,
-            message=RAIN_ALERT_MESSAGE.replace("'", ""),
+            message=RAIN_ALERT_MESSAGE,
         )

@@ -39,5 +39,5 @@ def send_nba_schedule(recipient_number):
 
         send_imessage_text(
             recipient_number=recipient_number,
-            message=message.replace("'", ""),
+            message=message,
         )

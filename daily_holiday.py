@@ -72,5 +72,5 @@ def send_daily_holiday_alert(recipient_number):
     holiday = get_daily_holiday()
     send_imessage_text(
         recipient_number=recipient_number,
-        message=HOLIDAY_MESSAGE.format(HOLIDAY=holiday.upper()).replace("'", ""),
+        message=HOLIDAY_MESSAGE.format(HOLIDAY=holiday.upper()),
     )
