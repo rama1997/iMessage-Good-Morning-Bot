@@ -41,3 +41,9 @@ def send_nba_schedule(recipient_number):
             recipient_number=recipient_number,
             message=message,
         )
+    else:
+        message = "No NBA games today."
+        send_imessage_text(
+            recipient_number=recipient_number,
+            message=message,
+        )
