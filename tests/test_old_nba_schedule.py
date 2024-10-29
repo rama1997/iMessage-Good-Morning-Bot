@@ -1,5 +1,5 @@
 import pytest
-from nba_schedule import get_todays_game_schedule
+from old_nba_schedule import get_todays_game_schedule
 
 
 @pytest.fixture
