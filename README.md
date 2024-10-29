@@ -14,6 +14,39 @@ A customizable automated bot that sends personalized morning messages through iM
 - **Flexible Configuration**: Enable/disable any module
 - **Profile System**: Support for multiple users with different preferences
 
+## Feature Details
+
+### 🐕 Dog Picture
+
+- Sources images from popular dog subreddits including:
+  - r/corgi
+  - r/dogpictures
+  - r/puppies
+  - r/shiba
+  - r/puppysmiles
+  - r/lookatmydog
+  - r/rarepuppers
+- Filters for single-image posts
+- Requires Reddit API credentials
+
+### 🌧️ Rain Alert
+
+- Powered by OpenWeather API
+- Provides daily rain forecasts
+- Customizable alert messages
+
+### 🎉 Holiday Alert
+
+- Scrapes nationaltoday.com
+- Features popular daily "national" holidays
+- Fun and lighthearted updates
+
+### 🏀 NBA Schedule
+
+- Uses Sportsdata.io API
+- Displays daily game schedule, game time, and broadcast channels
+
+
 # Getting Started
 
 ## Prerequisites
@@ -74,38 +107,6 @@ python main.py -n profile_name
 ```
 
 For automated daily messages, set up a crontab schedule.
-
-## Feature Details
-
-### 🐕 Dog Picture
-
-- Sources images from popular dog subreddits including:
-  - r/corgi
-  - r/dogpictures
-  - r/puppies
-  - r/shiba
-  - r/puppysmiles
-  - r/lookatmydog
-  - r/rarepuppers
-- Filters for single-image posts
-- Requires Reddit API credentials
-
-### 🌧️ Rain Alert
-
-- Powered by OpenWeather API
-- Provides daily rain forecasts
-- Customizable alert messages
-
-### 🎉 Holiday Alert
-
-- Scrapes nationaltoday.com
-- Features popular daily "national" holidays
-- Fun and lighthearted updates
-
-### 🏀 NBA Schedule
-
-- Uses Sportsdata.io API
-- Displays daily game schedule, game time, and broadcast channels
 
 ## Roadmap
 
