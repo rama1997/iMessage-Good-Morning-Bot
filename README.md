@@ -1,84 +1,118 @@
 # iMessage-Good-Morning-Bot
-Bot that sends customizable morning message through iMessage every morning.
+A customizable automated bot that sends personalized morning messages through iMessage, featuring daily rain updates, NBA schedules, and more.
 
 <img src="https://i.imgur.com/EDDUyPo.png" width="405" height="486" />
 
-# Features
-- Customizable good morning greeting
-- Additional content included with each message:
-	- Dog Picture - Sends a new dog pic from a selection of various dog subreddits
-	- Rain Alert - Sends a rain alert message if it is expected to rain
-	- National Holiday Alert - Sends an alert for a popular national holiday of the current day
-	- Motivation Quote - Sends a random motivation quote from a predefined list of quotes
-	- NBA Schedule - Sends a message containing the daily NBA game schedule
-- All messages are customizable
-- Option to disable any specific message/alert
+## Features
+- **Personalized Morning Greeting**: Fully customizable good morning message
+- **Dynamic Content**:
+  - 🐕 **Dog Pictures**: Daily photos from popular dog-focused subreddits
+  - 🌧️ **Rain Alerts**: Automatic rain notifications for your city
+  - 🎉 **Holiday Updates**: Daily notable "national holiday" notifications
+  - 💪 **Motivation Quotes**: Random inspirational messages
+  - 🏀 **NBA Schedule**: Daily game schedules
+- **Flexible Configuration**: Enable/disable any module
+- **Profile System**: Support for multiple users with different preferences
 
 # Getting Started
 
-## Requirements 
-- MacOS 
-- Apple ID
+## Prerequisites
+- MacOS device
+- Active Apple ID
+- Python 3.x
 
-## Setup
-Download repo from Github onto your computer
-```
+## Installation
+
+1. Clone the repository:
+```bash
 git clone https://github.com/rama1997/iMessage-Good-Morning-Bot.git
 cd iMessage-Good-Morning-Bot
 ```
 
-Clone this repo and install packages listed in requirements.txt
-```
+2. Install dependencies (preferably in a virtual environment):
+```bash
 pip install -r requirements.txt
 ```
-You may want to install the requirements in a Python virtual environment to ensure they don't conflict with other Python projects on your system.
 
 ## Configuration
-- Add required API key to `config.py` in order to use the additional messages like the dog picture message.
-- Message customization can be done in `config.py`, where you can edit: 
-	- Any of the messages provided
-	- Create your own message
-	- Subreddits to use as source for dog picture 
-	- Path to Applescript
-- Create a new profile python file in the `profiles` folder. Example profile provided in the folder. Each profile requires:
-	- Name - User will be referred to as the provided name
-	- Phone number - custom messages will be sent to the provided phone number
-	- City - rain alert feature will search the forecast of the provided city
-	- Can disable any specific messages that you don't want to recieve, e.g., the rain alert
-- Motivational quotes can be edited in `quotes.txt`
 
-# Usage 
-- Args:
-	- `-n --name`: name of profile to use 
-- Run: `python main.py -n name`
-- Use crontab to schedule program to run every morning at your desired time
+### API Setup
 
-# Dog Picture
-- Uses Reddit API to search various dog related subreddits and randomly gets a recent popular dog picture from listed subreddits. 
-- To use the Reddit API, requires your own reddit account and reddit API key.
-- Only returns posts that contain a single picture since I found it easier and faster to view on iMessage. 
-- Can edit list of subreddits or add more subreddits in `config.py`. 
+1. Add required API keys to `config.py`:
+   - Reddit API credentials (for dog pictures)
+   - OpenWeather API key (for weather alerts)
+   - SportsData.IO API Key (for daily NBA game schedule)
 
-Following subreddit used as sources for the dog picture:
-- [corgi](https://www.reddit.com/r/corgi/) 
-- [dogpictures](https://www.reddit.com/r/dogpictures/)
-- [puppies](https://www.reddit.com/r/puppies/)
-- [shiba](https://www.reddit.com/r/shiba) 
-- [puppysmiles](https://www.reddit.com/r/puppysmiles)
-- [lookatmydog](https://www.reddit.com/r/lookatmydog)
-- [rarepuppers](https://www.reddit.com/r/rarepuppers) 
+### Message Customization
 
+Edit `config.py` to:
 
-# Rain Alert
-Uses the OpenWeather API to get daily forecast of a desired city and sends a custom rain alert message if it is expected to rain in the day.
+- Customize message templates
+- Add new message types
+- Configure dog picture subreddit sources
+- Set Applescript path
 
-Requires OpenWeather API Key.
+### User Profiles
 
-# National Holiday Alert
-Web scrapes https://nationaltoday.com to get the most popular daily "national" holiday and sends a customizable holiday alert message. Most of the holidays are going to end up being more fun holidays, for examples, National Unicorn Day.
+1. Create a new profile in the `profiles` folder (see example profile)
+2. Required profile settings:
+   - Name: User's preferred name
+   - Phone number: Target iMessage number
+   - City: Location for weather alerts
+   - Feature toggles: Enable/disable specific features
 
-# NBA Schedule
-Sends a message containing the daily NBA game schedule retrieved using the NBA API
+### Quotes
 
-# Todo
-- Add high traffic/long commute time alert
+Edit `quotes.txt` to customize the motivation quote collection
+
+## Usage
+
+Run the bot for a specific profile:
+
+```bash
+python main.py -n profile_name
+```
+
+For automated daily messages, set up a crontab schedule.
+
+## Feature Details
+
+### 🐕 Dog Picture
+
+- Sources images from popular dog subreddits including:
+  - r/corgi
+  - r/dogpictures
+  - r/puppies
+  - r/shiba
+  - r/puppysmiles
+  - r/lookatmydog
+  - r/rarepuppers
+- Filters for single-image posts
+- Requires Reddit API credentials
+
+### 🌧️ Rain Alert
+
+- Powered by OpenWeather API
+- Provides daily rain forecasts
+- Customizable alert messages
+
+### 🎉 Holiday Alert
+
+- Scrapes nationaltoday.com
+- Features popular daily "national" holidays
+- Fun and lighthearted updates
+
+### 🏀 NBA Schedule
+
+- Uses Sportsdata.io API
+- Displays daily game schedule, game time, and broadcast channels
+
+## Roadmap
+
+- [ ] Traffic and commute time alerts
+- [ ] Additional weather alert types
+- [ ] More customization options
+
+## Contributing
+
+Contributions are welcome! Feel free to submit issues and pull requests.
